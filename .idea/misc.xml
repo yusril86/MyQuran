@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/project/andro/MyQuran/app/src/main/res/drawable/bg_btn_surah.xml" value="0.1115" />
         <entry key="..\:/project/andro/MyQuran/app/src/main/res/drawable/bg_card_surah.xml" value="0.1525" />
-        <entry key="..\:/project/andro/MyQuran/app/src/main/res/layout/activity_main.xml" value="0.11730072463768115" />
+        <entry key="..\:/project/andro/MyQuran/app/src/main/res/drawable/ic_arrow_right.xml" value="0.1115" />
+        <entry key="..\:/project/andro/MyQuran/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/project/andro/MyQuran/app/src/main/res/layout/activity_surah.xml" value="0.17074275362318841" />
         <entry key="..\:/project/andro/MyQuran/app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
         <entry key="..\:/project/andro/MyQuran/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />

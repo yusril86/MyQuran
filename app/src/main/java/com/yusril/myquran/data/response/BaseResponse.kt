@@ -4,20 +4,15 @@ import com.google.gson.annotations.SerializedName
 
 data class BaseResponse<ModelName>(
 
+//    @SerializedName("data")
     val data: ModelName? = null,
 
 )
 
 data class BaseResponseList<ModelName>(
 
-    @SerializedName("data")
-    val data: List<ModelName>? = null,
-
-    @SerializedName("message")
-    val message: String? = null,
-
-    @SerializedName("status")
-    val status: Boolean
+//    @SerializedName("data")
+    val data: List<ModelName>? = null
 )
 
 data class BaseResponseMessage(

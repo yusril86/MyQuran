@@ -45,7 +45,7 @@ class DashboardFragment : Fragment() {
     }
 
     private fun getSurah() {
-        dashboardViewModel.fetchDataSurah()
+       /* dashboardViewModel.fetchDataSurah()
         dashboardViewModel.getListSurah().observe(viewLifecycleOwner) {
             it.also {
                 binding.rvSurah.apply {
@@ -54,7 +54,7 @@ class DashboardFragment : Fragment() {
                 }
 //                adapterSurah.updateAdapter(ArrayList(it!!))
             }
-        }
+        }*/
 
     }
 

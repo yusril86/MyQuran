@@ -1,5 +1,6 @@
 package com.yusril.myquran
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.yusril.myquran.adapter.SurahAdapter
 import com.yusril.myquran.databinding.ActivityMainBinding
 import com.yusril.myquran.ui.dashboard.DashboardViewModel
+import com.yusril.myquran.ui.surah.SurahActivity
 import com.yusril.myquran.ui.surah.SurahViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -24,13 +26,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-
-
-        navView.setupWithNavController(navController)
+        binding.btnSurah.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    SurahActivity::class.java
+                )
+            )
+        }
     }
 }

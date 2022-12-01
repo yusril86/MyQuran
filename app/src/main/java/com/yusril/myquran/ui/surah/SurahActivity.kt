@@ -26,14 +26,13 @@ class SurahActivity : AppCompatActivity() {
         viewModel.fetchDataSurah()
         viewModel.getListSurah().observe(this) {
 
-
                 when (it) {
                     is Resource.Success -> {
                         binding.rvSurah.apply {
                             setHasFixedSize(true)
                             adapter = adapterSurah
                         }
-                        adapterSurah.updateAdapter((listOf(it.data?.data!!)))
+                        adapterSurah.updateAdapter((it.data!!))
                     }
 
                     is Resource.Loading -> {

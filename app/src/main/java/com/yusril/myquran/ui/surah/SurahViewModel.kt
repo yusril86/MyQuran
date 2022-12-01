@@ -6,12 +6,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yusril.myquran.data.network.ApiClient
 import com.yusril.myquran.data.response.BaseResponse
+import com.yusril.myquran.data.response.BaseResponseList
 import com.yusril.myquran.data.response.SurahModel
 import com.yusril.myquran.utils.Resource
 import kotlinx.coroutines.launch
 
 class SurahViewModel :  ViewModel() {
-    private val  mResponseListSurah =  MutableLiveData<Resource<BaseResponse<SurahModel>?>>()
+    private val  mResponseListSurah =  MutableLiveData<Resource<List<SurahModel>>>()
 
     fun fetchDataSurah(){
         viewModelScope.launch {
@@ -27,7 +28,7 @@ class SurahViewModel :  ViewModel() {
         }
     }
 
-    fun getListSurah(): MutableLiveData<Resource<BaseResponse<SurahModel>?>> {
+    fun getListSurah(): MutableLiveData<Resource<List<SurahModel>>> {
         return mResponseListSurah
     }
 }
