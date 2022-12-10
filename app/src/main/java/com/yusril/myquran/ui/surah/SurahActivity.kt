@@ -1,14 +1,14 @@
 package com.yusril.myquran.ui.surah
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.yusril.myquran.adapter.SurahAdapter
-import com.yusril.myquran.databinding.ActivityMainBinding
 import com.yusril.myquran.databinding.ActivitySurahBinding
 import com.yusril.myquran.utils.Resource
-import retrofit2.Response
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SurahActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySurahBinding
     private val viewModel: SurahViewModel by viewModels()
@@ -23,7 +23,6 @@ class SurahActivity : AppCompatActivity() {
     }
 
     private fun getSurah() {
-        viewModel.fetchDataSurah()
         viewModel.getListSurah().observe(this) {
 
                 when (it) {

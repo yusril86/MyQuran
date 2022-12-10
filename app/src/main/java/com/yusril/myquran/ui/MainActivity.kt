@@ -1,19 +1,10 @@
-package com.yusril.myquran
+package com.yusril.myquran.ui
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.yusril.myquran.adapter.SurahAdapter
 import com.yusril.myquran.databinding.ActivityMainBinding
-import com.yusril.myquran.ui.dashboard.DashboardViewModel
 import com.yusril.myquran.ui.surah.SurahActivity
-import com.yusril.myquran.ui.surah.SurahViewModel
 
 class MainActivity : AppCompatActivity() {
 

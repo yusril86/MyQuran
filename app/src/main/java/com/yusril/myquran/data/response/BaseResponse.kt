@@ -10,8 +10,6 @@ data class BaseResponse<ModelName>(
 )
 
 data class BaseResponseList<ModelName>(
-
-//    @SerializedName("data")
     val data: List<ModelName>? = null
 )
 

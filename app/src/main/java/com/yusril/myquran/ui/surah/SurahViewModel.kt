@@ -1,34 +1,44 @@
 package com.yusril.myquran.ui.surah
 
-import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.yusril.myquran.data.network.ApiClient
-import com.yusril.myquran.data.response.BaseResponse
-import com.yusril.myquran.data.response.BaseResponseList
+import com.yusril.myquran.data.repositories.surah.SurahRepository
 import com.yusril.myquran.data.response.SurahModel
 import com.yusril.myquran.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SurahViewModel :  ViewModel() {
-    private val  mResponseListSurah =  MutableLiveData<Resource<List<SurahModel>>>()
+@HiltViewModel
+class SurahViewModel @Inject constructor(
+    private val surahrepository: SurahRepository
+) :  ViewModel() {
+    /*private val  listSurahEmitter =  MutableLiveData<Resource<List<SurahModel>>>()
+    val surah : LiveData<Resource<List<SurahModel>>> = listSurahEmitter*/
 
-    fun fetchDataSurah(){
-        viewModelScope.launch {
-            val response = ApiClient.API_SERVICE.getListSurah()
-            mResponseListSurah.postValue(Resource.Loading())
-            try {
-
-                mResponseListSurah.postValue(Resource.Success(data = response))
-            }catch (e:Exception){
-                mResponseListSurah.postValue(Resource.Error(errorMessage = e.toString()))
-                Log.d("fetchsurah", e.localizedMessage!!)
-            }
-        }
+    /*init {
+        getListSurah()
     }
 
-    fun getListSurah(): MutableLiveData<Resource<List<SurahModel>>> {
-        return mResponseListSurah
+
+
+      private fun getListSurah(){
+        viewModelScope.launch(Dispatchers.IO) {
+          repository.getSurah().collect(){
+              listSurahEmitter.postValue(it)
+          }
+        }
+    }*/
+
+     fun getListSurah():LiveData<Resource<List<SurahModel>>>{
+         val result = MutableLiveData<Resource<List<SurahModel>>>()
+         viewModelScope.launch {
+             surahrepository.getSurah().collect(){
+                 result.postValue(it)
+             }
+         }
+         return result
     }
 }
