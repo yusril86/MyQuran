@@ -1,10 +1,12 @@
 package com.yusril.myquran.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yusril.myquran.data.response.SurahModel
 import com.yusril.myquran.databinding.ItemListSurahBinding
+import com.yusril.myquran.ui.ayat.AyatActivity
 
 class SurahAdapter : RecyclerView.Adapter<SurahAdapter.ItemViewHolder>() {
     private val mListSurah : MutableList<SurahModel> = ArrayList()
@@ -28,6 +30,11 @@ class SurahAdapter : RecyclerView.Adapter<SurahAdapter.ItemViewHolder>() {
                 tvJumlahAyat.text = jumlahAyat
                 tvNoSurah.text = nomorSurah
                 tvDaerah.text = daerahType
+            }
+            holder.itemView.setOnClickListener {
+                val intent = Intent(holder.itemView.context,AyatActivity::class.java)
+                intent.putExtra("nomor_surah",mListSurah[position].nomorSurah)
+                holder.itemView.context.startActivity(intent)
             }
         }
     }

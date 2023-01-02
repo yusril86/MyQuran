@@ -7,13 +7,13 @@ data class AyatModel(
     val arabAyat:String,
 
     @SerializedName("id")
-    val idAyat:String,
+    val artiAyat:String,
 
     @SerializedName("tr")
     val transliterasi:String,
 
     @SerializedName("nomor")
-    val nomor :String
+    val nomorAyat :String
 
 )
 

@@ -4,11 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_blue"
-    tools:context=".ui.surah.SurahActivity">
-
+    tools:context=".ui.ayat.AyatActivity">
     <ProgressBar
-        android:id="@+id/pbSurah"
+        android:id="@+id/pbAyat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -22,13 +20,14 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSurah"
+        android:id="@+id/rvAyat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_list_surah" />
+        tools:listitem="@layout/item_list_ayat" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="example_arti">Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan.</string>
+    <string name="example_ayat">176</string>
+    <string name="example_surah">﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</string>
 </resources>

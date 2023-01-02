@@ -1,6 +1,7 @@
 package com.yusril.myquran.ui.surah
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.yusril.myquran.adapter.SurahAdapter
@@ -27,6 +28,7 @@ class SurahActivity : AppCompatActivity() {
 
                 when (it) {
                     is Resource.Success -> {
+                        binding.pbSurah.visibility = View.GONE
                         binding.rvSurah.apply {
                             setHasFixedSize(true)
                             adapter = adapterSurah
@@ -36,10 +38,11 @@ class SurahActivity : AppCompatActivity() {
 
                     is Resource.Loading -> {
                         /*ProgressbarDialog*/
+                        binding.pbSurah.visibility = View.VISIBLE
                     }
 
                     is Resource.Error -> {
-
+                        binding.pbSurah.visibility = View.GONE
                     }
 
             }

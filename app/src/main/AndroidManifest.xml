@@ -16,7 +16,17 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".AyatActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.surah.SurahActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ayat.AyatActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"

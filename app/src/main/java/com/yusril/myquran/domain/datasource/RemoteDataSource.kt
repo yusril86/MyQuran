@@ -20,4 +20,13 @@ class RemoteDataSource @Inject constructor(
         }
     }
 
+    suspend fun getListAyat(ayat:String) = flow {
+        emit(Resource.Loading())
+        try {
+            val response = apiServices.getAyat(ayat)
+            emit(Resource.Success(data = response))
+        } catch (exception: Exception) {
+            emit(Resource.Error(exception.toString()))
+        }
+    }
 }

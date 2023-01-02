@@ -1,6 +1,8 @@
 package com.yusril.myquran.di
 
 import com.yusril.myquran.data.network.ApiServices
+import com.yusril.myquran.data.repositories.ayat.AyatRepository
+import com.yusril.myquran.data.repositories.ayat.AyatRepositoryImp
 import com.yusril.myquran.data.repositories.surah.SurahRepository
 import com.yusril.myquran.data.repositories.surah.SurahRepositoryImp
 import com.yusril.myquran.domain.datasource.RemoteDataSource
@@ -25,5 +27,10 @@ object AppModule {
     @Provides
     fun provideSurahRepository(remoteDataSource: RemoteDataSource): SurahRepository {
         return SurahRepositoryImp(remoteDataSource)
+    }
+
+    @Provides
+    fun provideAyatRepository(remoteDataSource: RemoteDataSource): AyatRepository {
+        return AyatRepositoryImp(remoteDataSource)
     }
 }

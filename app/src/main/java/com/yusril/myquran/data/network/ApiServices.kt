@@ -15,8 +15,8 @@ interface ApiServices {
     @GET("/99c279bb173a6e28359c/data")
     suspend fun getListSurah(): List<SurahModel>
 
-   /* @GET("/99c279bb173a6e28359c/surat/{ayat}")
+    @GET("/99c279bb173a6e28359c/surat/{ayat}")
     suspend fun getAyat(
         @Path("ayat") numberAyat:String
-    ):List<AyatModel>*/
+    ):List<AyatModel>
 }

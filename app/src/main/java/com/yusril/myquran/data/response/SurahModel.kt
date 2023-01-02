@@ -1,7 +1,10 @@
 package com.yusril.myquran.data.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class SurahModel(
 
     @SerializedName("nama")
@@ -22,4 +25,4 @@ data class SurahModel(
     @SerializedName("keterangan")
     val keteranganSurah : String? = null
 
-)
+):Parcelable
