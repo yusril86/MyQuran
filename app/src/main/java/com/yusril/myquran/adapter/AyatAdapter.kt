@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yusril.myquran.data.response.AyatModel
 import com.yusril.myquran.databinding.ItemListAyatBinding
 
-class AyatAdapter(context: Context, private val list: List<AyatModel>) :
+class AyatAdapter( private val list: List<AyatModel>) :
     RecyclerView.Adapter<AyatAdapter.ViewHolder>() {
+
+    var onItemClick : ((AyatModel) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
             ItemListAyatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -22,7 +25,11 @@ class AyatAdapter(context: Context, private val list: List<AyatModel>) :
                 tvArti.text = artiAyat
                 tvArabicSurah.text = arabAyat
             }
+            holder.itemView.setOnClickListener {
+                onItemClick?.invoke(list[position])
+            }
         }
+
     }
 
     override fun getItemCount(): Int {

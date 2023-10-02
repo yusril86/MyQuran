@@ -1,5 +1,6 @@
 package com.yusril.myquran.data.repositories.surah
 
+import com.yusril.myquran.data.local.entity.SurahEntity
 import com.yusril.myquran.data.response.SurahModel
 import com.yusril.myquran.utils.Resource
 import kotlinx.coroutines.flow.Flow

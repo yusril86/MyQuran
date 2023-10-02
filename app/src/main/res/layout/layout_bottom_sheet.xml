@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:id="@+id/btnBookmark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bookmark"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bookmarked"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:id="@+id/btnCopy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnBookmark"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_copy"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTextCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copy Ayat"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.yusril.myquran.data.local.entity.SurahEntity
 import com.yusril.myquran.data.response.SurahModel
 import com.yusril.myquran.databinding.ItemListSurahBinding
 import com.yusril.myquran.ui.ayat.AyatActivity
@@ -11,7 +12,7 @@ import com.yusril.myquran.ui.ayat.AyatActivity
 class SurahAdapter : RecyclerView.Adapter<SurahAdapter.ItemViewHolder>() {
     private val mListSurah : MutableList<SurahModel> = ArrayList()
 
-    fun updateAdapter(list : List<SurahModel>){
+    fun updateAdapter(list: List<SurahModel>){
         mListSurah.clear()
         mListSurah.addAll(list)
         notifyDataSetChanged()

@@ -8,12 +8,12 @@ plugins {
 
 android {
 
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.yusril.myquran"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -50,6 +50,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
+
+    //Room
+    implementation 'androidx.room:room-runtime:2.5.2'
+    implementation 'androidx.room:room-ktx:2.5.2'
+    kapt 'androidx.room:room-compiler:2.5.2'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
