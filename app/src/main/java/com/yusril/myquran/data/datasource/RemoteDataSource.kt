@@ -1,10 +1,8 @@
-package com.yusril.myquran.domain.datasource
+package com.yusril.myquran.data.datasource
 
-import com.yusril.myquran.data.mapper.SurahMapperEntity
 import com.yusril.myquran.data.network.ApiServices
-import com.yusril.myquran.data.response.SurahModel
+import com.yusril.myquran.data.response.SurahResponse
 import com.yusril.myquran.utils.Resource
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -14,7 +12,7 @@ class RemoteDataSource @Inject constructor(
     private val apiServices: ApiServices,
     private val localDataSource: LocalDataSource
 ) {
-    suspend fun getListSurah() : List<SurahModel> {
+    suspend fun getListSurah() : List<SurahResponse> {
         return apiServices.getListSurah()
     }
 

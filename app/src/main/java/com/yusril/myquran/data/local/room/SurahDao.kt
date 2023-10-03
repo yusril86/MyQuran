@@ -4,13 +4,13 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.yusril.myquran.data.response.SurahModel
+import com.yusril.myquran.data.response.SurahResponse
 
 @Dao
 interface SurahDao {
     @Query("SELECT * from surah")
-    fun getAllSurah(): List<SurahModel>
+    fun getAllSurah(): List<SurahResponse>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(data:  List<SurahModel>)
+    fun insertAll(data:  List<SurahResponse>)
 }

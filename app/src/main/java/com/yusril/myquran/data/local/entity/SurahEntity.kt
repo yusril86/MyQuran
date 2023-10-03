@@ -8,6 +8,10 @@ import com.google.gson.annotations.SerializedName
 //@Entity(tableName = "surah")
 data class SurahEntity(
 
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    val id: Int = 0,
+
     @field:ColumnInfo(name ="nama")
     val namaSurah: String,
 

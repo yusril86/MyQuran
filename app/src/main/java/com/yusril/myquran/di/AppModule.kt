@@ -9,8 +9,8 @@ import com.yusril.myquran.data.repositories.ayat.AyatRepository
 import com.yusril.myquran.data.repositories.ayat.AyatRepositoryImp
 import com.yusril.myquran.data.repositories.surah.SurahRepository
 import com.yusril.myquran.data.repositories.surah.SurahRepositoryImp
-import com.yusril.myquran.domain.datasource.LocalDataSource
-import com.yusril.myquran.domain.datasource.RemoteDataSource
+import com.yusril.myquran.data.datasource.LocalDataSource
+import com.yusril.myquran.data.datasource.RemoteDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -9,11 +9,14 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Entity(tableName = "surah")
-data class SurahModel(
+data class SurahResponse(
+    @PrimaryKey(autoGenerate = true)
+    @field:ColumnInfo(name ="id")
+    val id : Int,
+
     @SerializedName("nama")
-    @PrimaryKey
     @field:ColumnInfo(name ="nama")
-    val namaSurah: String,
+    val namaSurah: String? = null,
 
     @SerializedName("asma")
     @field:ColumnInfo(name ="asma")

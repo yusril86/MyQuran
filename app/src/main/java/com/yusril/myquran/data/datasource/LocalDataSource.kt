@@ -1,12 +1,8 @@
-package com.yusril.myquran.domain.datasource
+package com.yusril.myquran.data.datasource
 
-import androidx.lifecycle.LiveData
-import com.yusril.myquran.data.local.entity.AyatEntity
-import com.yusril.myquran.data.local.entity.SurahEntity
 import com.yusril.myquran.data.local.room.AyatDao
 import com.yusril.myquran.data.local.room.SurahDao
-import com.yusril.myquran.data.response.SurahModel
-import kotlinx.coroutines.flow.Flow
+import com.yusril.myquran.data.response.SurahResponse
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -15,11 +11,11 @@ class LocalDataSource @Inject constructor(
     private val ayatDao: AyatDao,
     private val surahDao: SurahDao
 ) {
-    fun getAllData(): List<SurahModel>{
+    fun getSurahDataLocal(): List<SurahResponse>{
         return surahDao.getAllSurah()
     }
 
-    suspend fun insertData(dataEntity:  List<SurahModel>) {
+    suspend fun insertData(dataEntity:  List<SurahResponse>) {
         surahDao.insertAll(dataEntity)
     }
 }
