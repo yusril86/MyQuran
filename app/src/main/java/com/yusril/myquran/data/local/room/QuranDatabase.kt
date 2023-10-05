@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.yusril.myquran.data.local.entity.AyatEntity
+import com.yusril.myquran.data.local.entity.SurahEntity
 import com.yusril.myquran.data.response.SurahResponse
 
-@Database(entities = [AyatEntity::class, SurahResponse::class], version = 2)
+@Database(entities = [AyatEntity::class, SurahEntity::class], version = 2)
 abstract class QuranDatabase :RoomDatabase() {
 
     abstract fun ayatDao(): AyatDao

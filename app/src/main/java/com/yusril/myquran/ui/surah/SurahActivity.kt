@@ -32,29 +32,6 @@ class SurahActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         getSurah()
-        /* lifecycleScope.launch {
-             viewModel.getDataFlow().collect {
-                 when (it) {
-                     is Resource.Loading -> {
-                         // Show loading UI
-                         binding.pbSurah.visibility = View.VISIBLE
-                     }
-                     is Resource.Success -> {
-                         val dataEntities = it.data
-                         binding.pbSurah.visibility = View.GONE
-                         binding.rvSurah.apply {
-                             setHasFixedSize(true)
-                             adapter = adapterSurah
-                         }
-                         adapterSurah.updateAdapter((dataEntities!!))
-                     }
-                     is Resource.Error -> {
-                         // Handle error
-                         binding.pbSurah.visibility = View.GONE
-                     }
-                 }
-             }
-         }*/
     }
 
     private fun getSurah() {

@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-//@Entity(tableName = "surah")
+@Entity(tableName = "surah")
 data class SurahEntity(
 
     @PrimaryKey(autoGenerate = true)

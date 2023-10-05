@@ -1,8 +1,10 @@
 package com.yusril.myquran.data.repositories.surah
 
-import com.yusril.myquran.data.response.SurahResponse
 import com.yusril.myquran.data.datasource.LocalDataSource
 import com.yusril.myquran.data.datasource.RemoteDataSource
+import com.yusril.myquran.data.mapper.surahMapperEntity
+import com.yusril.myquran.data.mapper.surahMapperResponse
+import com.yusril.myquran.data.response.SurahResponse
 import com.yusril.myquran.utils.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -22,13 +24,13 @@ class SurahRepositoryImp @Inject constructor(
         // Coba ambil data dari lokal
         val localSurahs = localDataSource.getSurahDataLocal()
         if (localSurahs.isNotEmpty()){
-            emit(Resource.Success(localSurahs))
+            emit(Resource.Success(surahMapperResponse(localSurahs)))
         }
 
         // Ambil data dari remote
         try {
             val remoteSurahs = remoteDataSource.getListSurah()
-            localDataSource.insertData(remoteSurahs)
+            localDataSource.insertData(surahMapperEntity(remoteSurahs))
             emit(Resource.Success(remoteSurahs))
         } catch (e: Exception) {
             // Emit error jika gagal mengambil data dari remote
